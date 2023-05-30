@@ -5,16 +5,16 @@
       <div><strong>Описание:</strong> {{ post.body }}</div>
     </div>
     <div class="post__buttons">
-      <my-button>Удалить</my-button>
+      <my-button
+          @click="$emit('delete', post)"
+          style="align-self: flex-end;"
+      >Удалить</my-button>
     </div>
   </div>
 </template>
 
 <script>
-import MyButton from "@/components/UI/MyButton.vue";
-
 export default {
-  components: {MyButton},
   props: {
     post: {
       type: Object,
